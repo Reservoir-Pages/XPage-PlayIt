@@ -1,4 +1,71 @@
-.header {
+@use "../../variables" as *;
+@use "../../mixins/" as *;
+
+.footer {
+	background-image: url("@images/footer-bg.png");
+	background-repeat: no-repeat;
+	background-position: 131% -57%;
+
+	&__container {
+		@include flex;
+		padding: 0;
+		padding-top: 35px;
+		padding-bottom: 36px;
+		border-top: 1px solid $color-text;
+	}
+
+	&__download {
+		flex: 1 1 450px;
+		@include flex-col;
+	}
+
+	&__title {
+		margin: 0;
+		margin-bottom: 32px;
+		// max-width: 950px;
+		font-size: clamp(1.66em, 2.5vw, 4em);
+		line-height: 121%;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__links {
+		@include flex;
+		gap: 35px;
+	}
+
+	&__link {
+		@include flex;
+		gap: 15px;
+
+		&-icon {
+			height: 30px;
+			width: 24px;
+		}
+
+		&-text {
+			@include flex-col;
+			padding-top: 3px;
+			font-family: $ff-description;
+			font-size: 12px;
+			line-height: 120%;
+			font-weight: 400;
+		}
+	}
+
+	&__signature {
+		margin-top: auto;
+		font-size: 1em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__code {
+		flex: 1 1 auto;
+		@include flex-h-center;
+		padding-top: 29px;
+		padding-bottom: 186px;
+	}
 }
 
 @media (max-width: 320px) {

@@ -1,5 +1,5 @@
 import gulp from "gulp";
-// import pug from "../../src/data/pug.json" with { type: "json" };
+import pug from "../../src/data/pug.json" with { type: "json" };
 import { webpackConfig } from "../../webpack.config.js";
 import { configFTP } from "../config/ftp.js";
 import { path } from "./path.js";
@@ -59,13 +59,13 @@ export const app = {
 			svgoPlugins: [{ removeVieBox: false }],
 			optimizationLevel: 3,
 		},
-		// pugConvert: {
-		//   pretty: true,
-		//   data: {
-		//     head: pug.head,
-		//     list: pug.list,
-		//   },
-		// },
+		pugConvert: {
+			pretty: true,
+			// data: {
+			// 	head: pug.head,
+			// 	list: pug.list,
+			// },
+		},
 		webpackConfig,
 		webpack: {
 			mode: !isProd ? "development" : full ? "development" : "production",
@@ -122,6 +122,7 @@ export const app = {
 			// outputStyle: "expanded", // !!!
 			// outputStyle: "compressed", // !!!
 			outputStyle: isProd ? "compressed" : "expanded", // !!!
+			silenceDeprecations: ["legacy-js-api"], // need migrate
 		},
 	},
 };

@@ -1,0 +1,11 @@
+- var items = ["@images/3.webp", "@images/1.webp", "@images/2.webp"];
+
+section.banner 
+	.banner__container.container
+		h1.banner__title.title Найди с кем поиграть в баскет
+		.banner__swiper.swiper
+			.swiper-wrapper 
+				each item in items 
+					.swiper-slide
+						img(src=item).swiper__image
+			.swiper-pagination

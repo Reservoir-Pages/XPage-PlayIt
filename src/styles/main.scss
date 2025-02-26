@@ -1,9 +1,6 @@
-@import "lib";
-@import "variables";
-@import "mixins";
-@import "fonts";
-@import "settings";
-@import "settings";
-@import "effects";
+@use "./lib";
+@use "./fonts";
+@use "./helpers/" as *;
+@use "./settings";
 
-@import "./components/**/*";
+@use "./components/" as *;

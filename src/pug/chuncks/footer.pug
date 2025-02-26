@@ -1,0 +1,14 @@
+footer.footer 
+	.footer__container.container
+		.footer__download 
+			h2.footer__title Еще больше полезных материалов и видеоуроков в нашем приложении
+			.footer__links 
+				each link in footerLink 
+					a.footer__link(href="#")
+						img(src=link.url, alt=link.alt)
+						//- span.footer__link-text
+						//- 	| #{link.textThink}
+						//- 	b #{link.textBold}
+			span.footer__signature сделано в xpage
+		.footer__code 
+			img(src="@images/code.svg", alt="qr-code").footer__code-image

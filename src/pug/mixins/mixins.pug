@@ -1,0 +1,9 @@
+mixin svg(name, icon)
+	svg(class=icon) 
+		use(xlink:href=`/images/sprite.svg#${name}`)
+
+mixin search(action, type)
+	search 
+		form(action=action)
+			input(type=type)
+			button(type="submit") search 

@@ -1,0 +1,8 @@
+section.play 
+	.play__container.container 
+		.play__header 
+			h2.play__header-title.title играй
+			a.play__header-btn.section-btn(href="#") в раздел
+		ul.play__list.list-reset 
+			each card in playList 
+				include ../components/play-card

@@ -1,0 +1,151 @@
+@use "sass:math";
+@use "../../variables" as *;
+@use "../../mixins/" as *;
+
+.play {
+	margin-bottom: 120px;
+
+	&__container {
+		padding: 0;
+	}
+
+	&__header {
+		@include flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: clamp(20px, 4vw, 63px);
+
+		&-btn {
+			margin-right: -7px;
+			color: $color-orange;
+
+			&::after {
+				background-image: url("@images/arrow-orange.svg");
+			}
+		}
+	}
+
+	&__list {
+		@include flex;
+		gap: 8px;
+	}
+
+	.card {
+		flex: 1 1 calc(100% / 3 - 8px);
+		display: flex;
+		flex-direction: column;
+		// max-height: 784px;
+		padding-bottom: 12px;
+		border-radius: 20px;
+		color: $color_text;
+		background-color: $color_white;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: $color-text;
+			color: $color_white;
+
+			.card {
+				&__text {
+					margin-bottom: 20px;
+				}
+
+				&__btn {
+					position: relative;
+					padding: 0 24px;
+					height: 64px;
+					width: 100%;
+					border-radius: 16px;
+					font-size: 1.33em;
+					font-weight: 700;
+					// text-align: left;
+					text-transform: uppercase;
+					color: $color_white;
+					background-color: $color-orange;
+					opacity: 1;
+					visibility: visible;
+					// transition: all 0.3s ease;
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: 50%;
+						right: 24px;
+						height: 15px;
+						width: 22px;
+						@include bg-cover-center("@images/arrow-white.svg");
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+
+		&__image {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 64px;
+			// margin-bottom: auto;
+			// min-height: 520px;
+			// height: 100%;
+			overflow: hidden;
+			// transition: all 3s ease;
+		}
+
+		&:not(:nth-child(2)) {
+			img {
+				// height: auto;
+				// width: 100%;
+				// border-radius: 20px 20px 50% 50%;
+			}
+		}
+
+		&:nth-child(2) {
+			img {
+				width: 75%;
+				// width: 100%;
+				// border-radius: 20px 20px 50% 50%;
+			}
+		}
+
+		img {
+			// height: 100%;
+			// object-fit: cover;
+			// object-position: bottom;
+			border-radius: 20px;
+		}
+
+		&__content {
+			padding: 0 25px;
+		}
+
+		&__title {
+			margin: 0;
+			margin-bottom: 16px;
+			max-width: 320px;
+			font-size: clamp(2em, 1.66vw, 2.66em);
+			line-height: 130%;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		&__text {
+			margin: 0;
+			max-width: 440px;
+			font-family: Inter, sans-serif;
+			font-size: 1.33em;
+			line-height: 160%;
+			font-weight: 500;
+			transition: all 0.1s ease;
+		}
+
+		&__btn {
+			height: 0;
+			width: 0;
+			font-size: 0;
+			text-align: left;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+		}
+	}
+}

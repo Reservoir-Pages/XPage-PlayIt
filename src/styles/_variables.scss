@@ -1,10 +1,27 @@
-$container-offset: 32px;
-$minWidth: 320px;
-$container: 1880px;
-$font-family: Inter, sans-serif;
-$font-size: 16px;
+@use "./functions/" as *;
+@use "./mixins/" as *;
 
-$color_black: #000000;
-$color_white: #ffffff;
-$color_text: #202020;
-$color_bg: #ffffff;
+$container-padding-x: rem(20);
+$container: 1880;
+$minWidth: 320;
+$font-family: DrukWideCyr, sans-serif;
+$ff-description: Inter, sans-serif;
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-green: #2e8d43;
+$color-orange: #f36722;
+$color-grey: #c4c4c4;
+$color-text: #202020;
+// $color-grey_light: #ececec;
+$color-bg: #ececec;
+$color-grey: #c4c4c4;
+$color-grey_dark: #747474;
+
+$DESKTOP_BACKGROUND: #efefef;
+$DESKTOP_WHITE_20: #ffffff33;
+
+@include tablet {
+	$container-padding-x: rem(16);
+}

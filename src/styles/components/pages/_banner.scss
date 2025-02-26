@@ -1,0 +1,87 @@
+@use "../../variables" as *;
+
+.banner {
+	// margin-bottom: 120px;
+	margin-bottom: clamp(40px, 7vw, 121px);
+	// max-height: calc(100vh - 88px);
+	// max-height: calc(100vh - 88px);
+
+	&__container {
+		position: relative;
+		padding: 0;
+	}
+
+	&__title {
+		position: absolute;
+		bottom: calc(20px + 7.71% + 47px);
+		left: 20px;
+		z-index: 2;
+		max-width: 70%;
+		color: $color_white;
+	}
+
+	&__swiper.swiper {
+		max-height: 830px;
+		border-radius: 20px;
+
+		.swiper {
+			&-pagination {
+				bottom: 20px;
+				display: flex;
+				gap: 8px;
+				padding: 0 20px;
+				height: 7.71%;
+
+				&-bullet {
+					position: relative;
+					flex: 1 1 auto;
+					margin: 0;
+					height: 100%;
+					border-radius: 20px;
+					background-color: $color_white;
+					opacity: 1;
+
+					&::after {
+						content: url("@images/arrow-white.svg");
+						position: absolute;
+						top: 50%;
+						right: 25px;
+						height: 15px;
+						transform: translateY(-50%);
+					}
+
+					$bulletItems: (
+						"1": "играй",
+						"2": "учись",
+						"3": "смотри",
+					);
+
+					@each $key, $value in $bulletItems {
+						&--#{$key} {
+							&::before {
+								content: $value;
+								position: absolute;
+								top: 50%;
+								left: 25px;
+								font-size: 1.33em;
+								font-weight: 700;
+								text-transform: uppercase;
+								transform: translateY(-50%);
+							}
+						}
+					}
+
+					&-active {
+						background-color: $color-orange;
+						transition: background-color 0.3s ease;
+
+						&::before {
+							color: $color_white;
+							transition: color 0.3s ease;
+						}
+					}
+				}
+			}
+		}
+	}
+}
