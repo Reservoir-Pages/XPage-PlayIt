@@ -1,9 +1,5 @@
 @use "../functions/" as *;
-
-$desktop: 1920.98;
-$laptop: 1023.98;
-$tablet: 767.98;
-$mobile: 320.98;
+@use "../variables" as *;
 
 @mixin mediaBg() {
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

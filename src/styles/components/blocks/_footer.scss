@@ -1,0 +1,90 @@
+@use "../../variables" as *;
+@use "../../functions/" as *;
+@use "../../mixins/" as *;
+
+.footer {
+	&__container {
+		position: relative;
+		@include flex;
+		padding-inline: 0;
+		padding-top: fluid(20, 35);
+		padding-bottom: fluid(23, 36);
+		min-height: fluid(488, 692);
+		height: 1px;
+		border-top: rem(1) solid $color-text;
+	}
+
+	&__download {
+		flex: 1 1 rem(450);
+		@include flex-col;
+
+		@include tablet {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		margin: 0;
+		margin-bottom: fluid(19, 30);
+		font-size: fluid(20, 48);
+		line-height: 121%;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		@include tablet {
+			line-height: 130%;
+		}
+	}
+
+	&__links {
+		@include flex;
+		gap: fluid(25, 35);
+		padding-top: rem(2);
+
+		@include tablet {
+			flex-direction: column;
+		}
+	}
+
+	&__link {
+		width: 133px;
+
+		&:nth-child(2) {
+			width: 118px;
+		}
+	}
+
+	&__signature {
+		margin-top: auto;
+		font-size: fluid(10, 12);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__code {
+		flex: 1 1 auto;
+		@include flex-h-center;
+		padding-top: rem(29);
+		padding-bottom: rem(189);
+
+		@include tablet {
+			display: none;
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		transform: translate(31%, 47%);
+
+		@include tablet {
+			transform: translate(33%, -27%);
+			width: fluid(213, 990);
+		}
+	}
+}
+
+@media (max-width: rem(320)) {
+}

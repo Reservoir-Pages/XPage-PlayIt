@@ -8,16 +8,20 @@
 	overflow: hidden;
 }
 
-@mixin text-fluid($min: 16, $max: 48, $container, $minWidth) {
-	font-size: fluid($min, $max, $container, $minWidth);
+@mixin text-fluid($min: 16, $max: 48) {
+	font-size: fluid($min, $max);
 }
 
 @mixin tag($color: white, $bg: rgba(white, 0.2)) {
-	padding: 10px 12px;
-	height: 33px;
-	border-radius: 39px;
+	padding: fluid(6, 8) rem(12);
+	// height: 33px;
+	height: fluid(26, 33);
+	// border-radius: 39px;
+	border-radius: fluid(20, 39);
 	font-size: 12px;
-	line-height: 13px;
+	font-size: fluid(10, 12);
+	// line-height: 13px;
+	line-height: fluid(14, 17);
 	font-weight: 700;
 	color: $color;
 	text-transform: uppercase;

@@ -19,10 +19,11 @@ export const webpackConfig = {
 				},
 			},
 			// TODO Style Loaders
-			// {
-			//   test: /\.css$/,
-			//   use: ["style-loader", "css-loader"],
-			// },
+			{
+				test: /\.(scss|css)$/,
+				// use: ["style-loader", "css-loader"],
+				use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+			},
 			// {
 			// 	test: /\.woff2?$/i,
 			// 	type: "asset/resource",

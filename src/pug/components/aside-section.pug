@@ -3,7 +3,8 @@
 	each article in section.articles
 		a(href=article.link).aside__section-content.article 
 			if article.image 
-				img(src=article.image.url, alt=article.image.alt).article__image
+				.article__image-wrapper
+					img(src=article.image.url, alt=article.image.alt).article__image
 			.article__content
 				if article.text 
 					p.article__text #{article.text}

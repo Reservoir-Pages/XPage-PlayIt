@@ -3,7 +3,7 @@
 }
 
 :focus-visible {
-	outline: 2px solid black;
+	outline: 2px solid currentColor;
 	outline-offset: 3px;
 }
 
@@ -13,11 +13,11 @@
 		transition: opacity 0.3s ease;
 
 		&:hover {
-			opacity: 0.5;
+			opacity: 0.7;
 		}
 	}
 }
 
 a:active {
-	opacity: 0.2;
+	opacity: 0.5;
 }

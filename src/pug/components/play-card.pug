@@ -1,7 +1,7 @@
 li.play__item.card 
 	.card__image 
-		img(src=card.image, alt=card.alt)
+		img.card__image-content(src=card.image, height="520", width="621", alt=card.alt, loading="lazy")
 	.card__content
 		h3.card__title #{card.title}
 		p.card__text #{card.text}
-		button.card__btn.btn-reset #{card.btn}
+		button.card__btn.btn-reset(type="button") #{card.btn}

@@ -8,7 +8,7 @@ section.learn
 				each ads in adsItems 
 					li.ads__item(class=ads.image ? "ads__item--image" : null)
 						if ads.image
-							img(src=ads.image.url, alt=ads.image.alt)
+							img.ads__image(src=ads.image.url, height="611", width="1194", alt=ads.image.alt, loading="lazy")
 						h3.ads__title #{ads.title }
 						ul.ads__tags.list-reset
 							each tag in ads.tags

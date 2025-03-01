@@ -3,16 +3,16 @@
 @use "../functions/" as *;
 
 .container {
-	// margin: 0 auto;
 	margin-inline: auto;
-	padding: 0 $container-padding-x;
+	// padding: 0 rem($container-padding-x);
+	padding: 0 fluid(12, 20);
 	max-width: rem($container);
 }
 
 .title {
 	margin: 0;
 	font-family: $font-family;
-	@include text-fluid(26, 80, $container, $minWidth);
+	@include text-fluid(26, 80);
 	line-height: 120%;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -20,9 +20,9 @@
 
 .section-btn {
 	position: relative;
-	margin-bottom: 14px;
-	padding-right: 38px;
-	font-size: clamp(1.4em, 1.04vw, 1.66em);
+	margin-bottom: rem(9);
+	padding-right: rem(38);
+	font-size: fluid(14, 20);
 	font-weight: 700;
 	text-transform: uppercase;
 
@@ -31,12 +31,21 @@
 		position: absolute;
 		top: 50%;
 		right: 0px;
-		height: 15px;
-		width: 22px;
+		height: rem(15);
+		width: rem(22);
 		transform: translateY(-50%);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
+
+		@include tablet {
+			content: none;
+		}
+	}
+
+	@include tablet {
+		margin-bottom: 0;
+		padding-right: 0;
 	}
 }
 

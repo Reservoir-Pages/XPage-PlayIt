@@ -1,11 +1,13 @@
-@use "./functions/" as *;
-@use "./mixins/" as *;
-
-$container-padding-x: rem(20);
+$container-padding-x: 20;
 $container: 1880;
 $minWidth: 320;
 $font-family: DrukWideCyr, sans-serif;
 $ff-description: Inter, sans-serif;
+
+$desktop: 1920.98;
+$laptop: 1023.98;
+$tablet: 767.98;
+$mobile: 320.98;
 
 $color-black: #000000;
 $color-white: #ffffff;
@@ -21,7 +23,3 @@ $color-grey_dark: #747474;
 
 $DESKTOP_BACKGROUND: #efefef;
 $DESKTOP_WHITE_20: #ffffff33;
-
-@include tablet {
-	$container-padding-x: rem(16);
-}

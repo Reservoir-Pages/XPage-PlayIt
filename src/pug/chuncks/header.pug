@@ -2,14 +2,14 @@ include ../variables/header-vars
 
 header.header 
 	.header__container.container 
-		a.header__logo(href="#") 
-			+svg("logo", "header__logo-icon")
+		a.header__logo.logo(href="/", title="Home", aria-label="Home") 
+			img(src="@images/logo.svg", alt="Logo")
 		nav.header__nav.nav 
 			ul.nav__list.list-reset 
 				each item in navItems 
 					li.nav__item 
-						a(href=item.itemUrl).nav__link #{item.itemText}
-		button.header__menu.btn-reset
+						a.nav__link(href=item.itemUrl) #{item.itemText}
+		button.header__menu.btn-reset(type="button", aria-label="Open menu")
 			+svg("burger-icon", "header__menu-icon")
 			| Меню
-		a(href="#").header__account.account геннадий П.
+		a.header__account.account(href="#") геннадий П.

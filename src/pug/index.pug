@@ -1,11 +1,12 @@
 extends chuncks/base
 
 block content
-	include chuncks/header
+	.body__wrapper
+		include chuncks/header
 	
-	main.main
-		include pages/banner
-		include pages/play
-		include pages/learn
+		main.main
+			include pages/banner
+			include pages/play
+			include pages/learn
  
-	include chuncks/footer
+		include chuncks/footer

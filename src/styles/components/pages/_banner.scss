@@ -1,10 +1,9 @@
 @use "../../variables" as *;
+@use "../../functions/" as *;
+@use "../../mixins/" as *;
 
 .banner {
-	// margin-bottom: 120px;
-	margin-bottom: clamp(40px, 7vw, 121px);
-	// max-height: calc(100vh - 88px);
-	// max-height: calc(100vh - 88px);
+	margin-bottom: fluid(42, 121);
 
 	&__container {
 		position: relative;
@@ -13,40 +12,81 @@
 
 	&__title {
 		position: absolute;
-		bottom: calc(20px + 7.71% + 47px);
-		left: 20px;
+		bottom: calc(rem(20) + rem(64) + rem(47));
+		left: fluid(12, 20);
 		z-index: 2;
 		max-width: 70%;
 		color: $color_white;
+
+		@include tablet {
+			bottom: calc(rem(12) + rem(128) + rem(12));
+		}
 	}
 
 	&__swiper.swiper {
-		max-height: 830px;
-		border-radius: 20px;
+		max-height: rem(830);
+		border-radius: fluid(12, 20);
 
 		.swiper {
+			&-slide {
+				min-height: rem(516);
+				height: auto;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background: linear-gradient(180deg, transparent 30%, rgba($color-text, 0.3) 100%);
+				}
+
+				img {
+					height: 100%;
+				}
+			}
+
 			&-pagination {
-				bottom: 20px;
+				bottom: fluid(12, 20);
 				display: flex;
-				gap: 8px;
-				padding: 0 20px;
-				height: 7.71%;
+				gap: fluid(4, 8);
+				padding: 0 fluid(12, 20);
 
 				&-bullet {
 					position: relative;
 					flex: 1 1 auto;
 					margin: 0;
-					height: 100%;
-					border-radius: 20px;
+					height: fluid(40, 64);
+					border-radius: fluid(10, 20);
 					background-color: $color_white;
 					opacity: 1;
 
-					&::after {
-						content: url("@images/arrow-white.svg");
+					@include tablet {
+						width: 100%;
+					}
+
+					&::before {
 						position: absolute;
 						top: 50%;
-						right: 25px;
-						height: 15px;
+						left: fluid(14, 25);
+						font-size: fluid(14, 16);
+						font-weight: 700;
+						text-transform: uppercase;
+						transform: translateY(-50%);
+					}
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: 50%;
+						right: fluid(14, 25);
+						height: fluid(10, 15);
+						width: fluid(15, 22);
+						background-image: url("@images/arrow-white.svg");
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: cover;
 						transform: translateY(-50%);
 					}
 
@@ -60,13 +100,6 @@
 						&--#{$key} {
 							&::before {
 								content: $value;
-								position: absolute;
-								top: 50%;
-								left: 25px;
-								font-size: 1.33em;
-								font-weight: 700;
-								text-transform: uppercase;
-								transform: translateY(-50%);
 							}
 						}
 					}
@@ -80,6 +113,10 @@
 							transition: color 0.3s ease;
 						}
 					}
+				}
+
+				@include tablet {
+					flex-direction: column;
 				}
 			}
 		}
