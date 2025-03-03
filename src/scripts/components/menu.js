@@ -3,6 +3,7 @@ const menu = document.querySelector(".header .nav");
 
 if (menuBtn && menu) {
 	menuBtn.addEventListener("click", (e) => {
+		document.body.classList.toggle("scroll-stop");
 		menu.classList.toggle("is-active");
 	});
 }

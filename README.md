@@ -7,3 +7,5 @@
 <!-- @eslint/js -->
 
 <!-- display: contents; for wrapper -->
+
+<!-- aspect-ratio -->

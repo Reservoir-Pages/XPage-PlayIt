@@ -19,7 +19,7 @@
 		color: $color_white;
 
 		@include tablet {
-			bottom: calc(rem(12) + rem(128) + rem(12));
+			bottom: calc(rem(12) + 25% + rem(12));
 		}
 	}
 
@@ -116,6 +116,7 @@
 				}
 
 				@include tablet {
+					height: 25%;
 					flex-direction: column;
 				}
 			}

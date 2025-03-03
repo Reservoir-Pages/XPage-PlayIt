@@ -5,11 +5,6 @@
 .play {
 	margin-bottom: fluid(42, 120);
 
-	/////////////////////////////////////////////////////////////////////////////////////
-	// @include tablet {
-	// 	margin-bottom: 64px;
-	// }
-
 	&__container {
 		padding: 0;
 	}
@@ -35,12 +30,12 @@
 	}
 
 	&__list {
-		@include flex;
-		gap: rem(8);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(296px, 1fr));
+		grid-gap: rem(8);
 	}
 
 	.card {
-		flex: 1 1 calc(100% / 3 - rem(8));
 		display: flex;
 		flex-direction: column;
 		padding-bottom: fluid(11, 24);
@@ -57,9 +52,14 @@
 			max-height: fluid(246, 520);
 			transition: all 0.2s ease;
 
-			img {
+			picture {
 				width: 100%;
-				border-radius: rem(40) rem(40) rem(640) rem(640);
+			}
+
+			img {
+				max-height: 100%;
+				width: 100%;
+				border-radius: fluid(20, 40) fluid(20, 40) rem(640) rem(640);
 			}
 		}
 
@@ -69,7 +69,7 @@
 				margin-left: auto;
 
 				img {
-					border-radius: rem(20);
+					border-radius: fluid(10, 20);
 					object-position: bottom;
 				}
 			}

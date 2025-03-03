@@ -5,7 +5,7 @@
 .footer {
 	&__container {
 		position: relative;
-		@include flex;
+		display: flex;
 		padding-inline: 0;
 		padding-top: fluid(20, 35);
 		padding-bottom: fluid(23, 36);
@@ -47,10 +47,11 @@
 	}
 
 	&__link {
-		width: 133px;
+		height: rem(31);
+		width: rem(132);
 
 		&:nth-child(2) {
-			width: 118px;
+			width: rem(108);
 		}
 	}
 
@@ -64,11 +65,15 @@
 	&__code {
 		flex: 1 1 auto;
 		@include flex-h-center;
-		padding-top: rem(29);
-		padding-bottom: rem(189);
+		padding-top: fluid(10, 29);
+		padding-bottom: fluid(40, 189);
 
 		@include tablet {
 			display: none;
+		}
+
+		img {
+			border-radius: rem(30);
 		}
 	}
 
